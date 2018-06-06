@@ -1,12 +1,11 @@
 <template>
-  <div class="sketch">
-    <div class="sketch__title">{{ title }} -- {{ description }}</div>
-    <div class="sketch__date">{{ date }}</div>
-  </div>
+  <nuxt-link :to="'/sketch/' + slug">
+    <div class="sketch">{{ date }}: {{ title }} -- {{ description }}</div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
-  props: ['title', 'date', 'description']
+  props: ['title', 'slug', 'date', 'description']
 };
 </script>

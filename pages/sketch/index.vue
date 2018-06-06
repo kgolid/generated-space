@@ -4,9 +4,9 @@
       v-for="s in sketches"
       :key="s.id"
       :title="s.title" 
+      :slug="s.slug.current"
       :description="s.description"
-      :date="s.created" /> 
-    />
+      :date="s.created" />
   </section>
 </template>
 
@@ -14,7 +14,7 @@
 import Sketch from '@/components/Sketch';
 import sanity from '@/static/sanity.js';
 
-const query = '*[_type == "sketch"] {_id,title,created,description,}[0...50]';
+const query = '*[_type == "sketch"] {_id,title,slug,created,description}[0...50]';
 
 export default {
   components: { Sketch },
