@@ -1,4 +1,5 @@
 const pkg = require('./package');
+const sanityClient = require('@sanity/client');
 
 module.exports = {
   mode: 'universal',
@@ -45,5 +46,20 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {}
+  },
+
+  generate: {
+    routes: function() {
+      const sanity = sanityClient({
+        projectId: '0jzrcm4a',
+        dataset: 'production',
+        useCdn: true
+      });
+      return sanity.fetch(`*[_type == "sketch"]{slug}[0...100]`).then(sketches => {
+        return sketches.map(sketch => {
+          return '/sketch/' + sketch.slug;
+        });
+      });
+    }
   }
 };
