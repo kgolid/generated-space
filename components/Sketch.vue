@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="'/sketch/' + slug">
-    <div class="sketch">{{ date }}: {{ title }} -- {{ description }}</div>
+    <div class="sketch">{{ slug }}: {{ title }} -- {{ description }}</div>
   </nuxt-link>
 </template>
 

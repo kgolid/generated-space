@@ -1,6 +1,6 @@
 <template>
   <section class="info-container">
-    <p><a href='/'>generated.space</a>/{{ $route.params.id }}</p>
+    <p><a href='/'>generated.space</a>/{{ $route.params.slug }}</p>
     <h2>{{ sketch.title }}</h2>
     <p>{{ sketch.description }}</p>
   </section>
@@ -11,8 +11,16 @@ import sanity from '@/static/sanity.js';
 
 export default {
   asyncData(context) {
-    const query = `*[_type == "sketch" && slug.current == "${context.params.id}"] 
-      {_id,title,created,description,path,background,"imageUrl": thumbnail.asset->url}[0...50]`;
+    const query = `*[_type == "sketch" && slug.current == "${context.params.slug}"] 
+      {
+        _id,title,
+        created,
+        description,
+        path,
+        background,
+        "imageUrl": thumbnail.asset->url
+      }[0...50]`;
+
     return sanity.fetch(query).then(sketches => {
       return { sketch: sketches[0] };
     });
@@ -20,10 +28,7 @@ export default {
   head() {
     return {
       title: this.sketch.title,
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/p5.js' },
-        { src: 'https://cdn.rawgit.com/kgolid/p5ycho/master/' + this.sketch.path, type: 'module' }
-      ],
+      script: [{ src: 'https://cdn.rawgit.com/kgolid/p5ycho/master/' + this.sketch.path, type: 'module' }],
       style: [{ cssText: 'body { background-color:' + this.sketch.background + ' !important;}', type: 'text/css' }]
     };
   }
