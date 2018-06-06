@@ -57,7 +57,7 @@ module.exports = {
       });
       return sanity.fetch(`*[_type == "sketch"]{slug}[0...100]`).then(sketches => {
         return sketches.map(sketch => {
-          return '/sketch/' + sketch.slug;
+          return '/sketch/' + sketch.slug.current;
         });
       });
     }
