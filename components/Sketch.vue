@@ -14,3 +14,8 @@ export default {
   }
 };
 </script>
+<style>
+#sketch-container {
+  margin-top: 40px;
+}
+</style>

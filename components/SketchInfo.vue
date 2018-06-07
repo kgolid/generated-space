@@ -13,3 +13,23 @@ export default {
 };
 </script>
 
+<style scoped>
+h2 {
+  text-transform: uppercase;
+}
+
+.info-container {
+  color: white;
+  position: fixed;
+  top: 0;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  background-color: #0f0f0f;
+  font-size: 0.7em;
+}
+
+.info-container > * {
+  margin: 10px;
+}
+</style>

@@ -26,3 +26,21 @@ export default {
   }
 };
 </script>
+
+<style>
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+span {
+  color: #444;
+}
+.container {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  width: 800px;
+  margin: 160px auto;
+}
+</style>
