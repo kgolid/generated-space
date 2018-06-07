@@ -1,15 +1,26 @@
 <template>
-  <section class="info-container">
-    <p><a href='/'>generated.space</a>/{{ $route.params.slug }}</p>
-    <h2>{{ sketch.title }}</h2>
-    <p>{{ sketch.description }}</p>
-  </section>
+  <div>
+    <SketchInfo 
+      :slug="$route.params.slug"
+      :title="sketch.title"
+      :date="sketch.created"
+      :description="sketch.description"
+    />
+    <Sketch 
+      :path="sketch.path"
+      :background="sketch.background"
+    />
+  </div>
 </template>
 
 <script>
 import sanity from '@/static/sanity.js';
+import SketchInfo from '@/components/SketchInfo';
+import Sketch from '@/components/Sketch';
 
 export default {
+  components: { SketchInfo, Sketch },
+
   asyncData(context) {
     const query = `*[_type == "sketch" && slug.current == "${context.params.slug}"] 
       {
@@ -25,11 +36,10 @@ export default {
       return { sketch: sketches[0] };
     });
   },
+
   head() {
     return {
-      title: this.sketch.title,
-      script: [{ src: 'https://cdn.rawgit.com/kgolid/p5ycho/master/' + this.sketch.path, type: 'module' }],
-      style: [{ cssText: 'body { background-color:' + this.sketch.background + ' !important;}', type: 'text/css' }]
+      title: this.sketch.title
     };
   }
 };
