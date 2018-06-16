@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -9,8 +10,10 @@ a {
 }
 
 body {
-  background-color: #0f0f0f;
+  background-color: #333;
   font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.1em;
 }
 
 canvas {

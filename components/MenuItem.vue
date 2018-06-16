@@ -1,7 +1,7 @@
 <template>
   <a :href="'/sketch/' + slug">
     <div class="menu-item">
-      <p>{{ title }}</p>
+      <p>{{ title }} <span>{{ date }}</span></p>
       </div>
   </a>
 </template>
@@ -16,12 +16,16 @@ export default {
 .menu-item {
   display: inline-block;
   max-width: 200px;
-  margin: 15px 30px;
-  font-size: 11pt;
-  font-weight: 400;
+  margin: 2px 20px 2px 0;
+  font-size: 0.75em;
+  font-weight: 600;
 }
 
 .menu-item:hover {
   text-decoration: underline;
+}
+
+.menu-item span {
+  font-weight: 200;
 }
 </style>

@@ -4,6 +4,7 @@
       :slug="$route.params.slug"
       :title="sketch.title"
       :date="sketch.created"
+      :path="sketch.path"
       :description="sketch.description"
     />
     <Sketch 
@@ -44,13 +45,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.info-container {
-  position: fixed;
-  margin: 20px;
-  padding: 20px;
-  width: 200px;
-  background-color: #e0e0e0;
-}
-</style>

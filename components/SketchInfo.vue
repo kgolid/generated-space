@@ -1,35 +1,56 @@
 <template>
   <section class="info-container">
-    <p><a href='/'>generated.space</a>/{{ slug }}</p>
-    <h2>{{ title }}</h2>
-    <p>{{ date }} </p>
-    <p>{{ description }}</p>
+    <div class="info-links">
+      <a href='/'>&lt; generated.space</a>
+      <a style="float:right" :href="'https://www.github.com/kgolid/p5ycho/blob/master/' + path">github &gt;</a>
+    </div>
+    <div><p class="info-label">Name</p><h2 class="info-text">{{ title }}</h2></div>
+    <div><p class="info-label">Date</p><p class="info-text">{{ date }}</p></div>
+    <div><p class="info-label">Descr</p><p class="info-text">{{ description }}</p></div>
   </section>
 </template>
 
 <script>
 export default {
-  props: ['title', 'slug', 'date', 'description']
+  props: ['title', 'slug', 'date', 'path', 'description']
 };
 </script>
 
 <style scoped>
-h2 {
-  text-transform: uppercase;
-}
-
 .info-container {
   color: white;
   position: fixed;
   top: 0;
-  margin: 10px;
+  margin: 15px;
   padding: 20px;
-  width: 200px;
-  background-color: #0f0f0f;
-  font-size: 0.7em;
+  background-color: #111;
+  font-size: 0.7rem;
 }
 
-.info-container > * {
-  margin: 10px;
+.info-container > div {
+  margin-top: 10px;
+}
+
+.info-container .info-links {
+  margin: -10px -10px 20px -10px;
+}
+
+.info-links a:hover {
+  text-decoration: underline;
+}
+
+.info-label {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: top;
+  text-align: right;
+  text-transform: uppercase;
+  width: 45px;
+  font-size: 0.6rem;
+}
+
+.info-text {
+  display: inline-block;
+  width: 200px;
 }
 </style>
