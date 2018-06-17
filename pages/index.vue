@@ -1,28 +1,38 @@
 <template>
+<div>
+  <div class="headimg"></div>
+  <Header/>
   <section class="container">
-    <div class="header-container">
-      <img src="~/assets/logo_bw.jpg"/>
-    </div>
-    <div class="menu-container">
-      <MenuItem 
-        v-for="s in sketches"
-        :key="s.id"
-        :title="s.title" 
-        :slug="s.slug.current"
-        :description="s.description"
-        :date="s.dateFormatted" />
+    <div class="main-content">
+      <MainMenu/>
+      <div class="menu-container">
+        <MenuItem 
+          v-for="s in sketches"
+          :key="s.id"
+          :title="s.title" 
+          :slug="s.slug.current"
+          :description="s.description"
+          :date="s.dateFormatted" />
+        </div>
       </div>
   </section>
+  <Footer/>
+</div>
 </template>
 
 <script>
+import Header from '@/components/Header';
 import MenuItem from '@/components/MenuItem';
+import MainMenu from '@/components/MainMenu';
+import Footer from '@/components/Footer';
 import sanity from '@/static/sanity.js';
 
-const query = '*[_type == "sketch"] {_id,title,slug,created,description}[0...50]';
+const query = `*[_type == "sketch"] | order(created desc) {
+    _id,title,slug,created,description
+  }[0...50]`;
 
 export default {
-  components: { MenuItem },
+  components: { MenuItem, MainMenu, Header, Footer },
   asyncData() {
     return sanity.fetch(query).then(sketches => {
       return {
@@ -38,28 +48,36 @@ export default {
 </script>
 
 <style>
-img {
+.headimg {
   width: 100%;
-  padding: 20px;
-}
-.container {
-  color: #111;
-  width: 900px;
-  margin: 160px auto;
-  padding: 50px;
-  background-color: white;
+  height: 800px;
+  background-image: url('~/assets/headimg_small.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
-.header-container {
-  display: inline-block;
-  width: 200px;
+.logo {
+  width: 100%;
 }
+.container {
+  background-color: white;
+  color: #111;
+}
+
+.main-content {
+  padding: 50px;
+  padding-left: 200px;
+}
+
 .menu-container {
-  height: 200px;
+  height: 365px;
   display: inline-flex;
   flex-wrap: wrap;
   flex-direction: column;
   vertical-align: top;
+  padding: 25px;
   padding-left: 50px;
+  border-left: 1px solid #111;
+  margin-left: 50px;
 }
 </style>

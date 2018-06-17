@@ -1,5 +1,8 @@
 <template>
-<div id="sketch-container"></div>
+<div>
+<div id="sketch"></div>
+<div id="controller"></div>
+</div>
 </template>
 
 <script>
@@ -15,7 +18,7 @@ export default {
 };
 </script>
 <style>
-#sketch-container {
+#sketch {
   margin-top: 40px;
 }
 </style>

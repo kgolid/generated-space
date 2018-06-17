@@ -10,8 +10,7 @@ a {
 }
 
 body {
-  background-color: #333;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Tajawal, Helvetica, Arial, sans-serif;
   letter-spacing: 0.05em;
   line-height: 1.1em;
 }
@@ -19,4 +18,13 @@ body {
 canvas {
   display: block;
   margin: auto;
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.85em;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
