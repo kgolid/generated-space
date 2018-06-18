@@ -11,7 +11,7 @@
   position: absolute;
   z-index: 10;
   top: 20px;
-  left: 50px;
+  left: 98px;
   color: #111;
 }
 

@@ -66,7 +66,7 @@ export default {
 
 .main-content {
   padding: 50px;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 
 .menu-container {
