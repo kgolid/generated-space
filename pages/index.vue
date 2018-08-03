@@ -70,10 +70,9 @@ export default {
 }
 
 .menu-container {
-  height: 365px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  width: calc(100% - 130px);
+  max-width: 1200px;
+  columns: 200px 5;
   vertical-align: top;
   padding: 25px;
   padding-left: 50px;
