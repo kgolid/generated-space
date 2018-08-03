@@ -14,8 +14,7 @@ export default {
 
 <style>
 .menu-item {
-  max-width: 200px;
-  margin: 2px 50px 2px 0;
+  margin: 2px 0;
   font-weight: 600;
 }
 
