@@ -70,6 +70,7 @@ export default {
 }
 
 .menu-container {
+  display:inline-block;
   width: calc(100% - 130px);
   max-width: 1200px;
   columns: 200px 5;
