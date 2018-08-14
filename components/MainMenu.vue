@@ -1,14 +1,12 @@
 <template>
   <div class="main-menu">
-    <a class="current" href="/"><p class="link">Sketches</p></a>
-    <a href="/images"><p class="link">Gallery</p></a>
-    <a href="/about"><p class="link">About</p></a>
-    <div style="height:25px"></div>
-    <a href="https://generated.bigcartel.com"><p class="link">Store</p></a>
-    <div style="height:25px"></div>
+    <nuxt-link to="/" exact><p class="link">Sketches</p></nuxt-link>
+    <nuxt-link to="/about"><p class="link">About</p></nuxt-link>
+    <div style="height:20px"></div>
     <a href="https://www.github.com/kgolid"><p class="link">GitHub</p></a>
     <a href="https://www.twitter.com/kgolid"><p class="link">Twitter</p></a>
     <a href="https://www.instagram.com/kgolid"><p class="link">Instagram</p></a>
+    <div style="height:150px"></div>
   </div>
 </template>
 <style>
@@ -24,11 +22,11 @@
   font-weight: 400;
 }
 
-.main-menu a.current {
-  font-weight: 600;
-}
-
 .main-menu a p {
   margin: 2px;
+}
+
+.main-menu a.nuxt-link-active p {
+  font-weight: 600;
 }
 </style>
