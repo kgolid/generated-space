@@ -24,7 +24,7 @@ export default {
   margin: 15px;
   padding: 20px;
   background-color: #111;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .info-container > div {
