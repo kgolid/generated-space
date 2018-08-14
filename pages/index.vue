@@ -29,7 +29,7 @@ import sanity from '@/static/sanity.js';
 
 const query = `*[_type == "sketch"] | order(created desc) {
     _id,title,slug,created,description
-  }[0...50]`;
+  }`;
 
 export default {
   components: { MenuItem, MainMenu, Header, Footer },
