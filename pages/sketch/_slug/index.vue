@@ -9,6 +9,7 @@
     />
     <Sketch 
       :path="sketch.path"
+      :external="sketch.external"
       :modular="sketch.modular_script"
       :background="sketch.background"
     />
@@ -30,6 +31,7 @@ export default {
         created,
         description,
         path,
+        external,
         modular_script,
         background,
         "imageUrl": thumbnail.asset->url
