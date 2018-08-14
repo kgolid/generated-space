@@ -7,11 +7,11 @@
 
 <script>
 export default {
-  props: ['path', 'background'],
+  props: ['path', 'modular', 'background'],
 
   head() {
     return {
-      script: [{ src: 'https://rawgit.com/kgolid/p5ycho/master/' + this.path}],
+      script: [{ src: 'https://rawgit.com/kgolid/p5ycho/master/' + this.path, type: this.modular ? 'module' : '' }],
       style: [{ cssText: 'body { background-color:' + this.background + ' !important;}', type: 'text/css' }]
     };
   }
