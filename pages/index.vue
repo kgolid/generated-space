@@ -1,30 +1,16 @@
 <template>
-<div>
-  <div class="headimg"></div>
-  <Header/>
-  <section class="container">
-    <div class="main-content">
-      <MainMenu/>
-      <div class="menu-container">
-        <MenuItem 
-          v-for="s in sketches"
-          :key="s.id"
-          :title="s.title" 
-          :slug="s.slug.current"
-          :description="s.description"
-          :date="s.dateFormatted" />
-        </div>
-      </div>
-  </section>
-  <Footer/>
+<div class="menu-container">
+  <MenuItem 
+    v-for="s in sketches"
+    :key="s.id"
+    :title="s.title" 
+    :slug="s.slug.current"
+    :description="s.description"
+    :date="s.dateFormatted" />
 </div>
 </template>
-
 <script>
-import Header from '@/components/Header';
 import MenuItem from '@/components/MenuItem';
-import MainMenu from '@/components/MainMenu';
-import Footer from '@/components/Footer';
 import sanity from '@/static/sanity.js';
 
 const query = `*[_type == "sketch"] | order(created desc) {
@@ -32,7 +18,8 @@ const query = `*[_type == "sketch"] | order(created desc) {
   }`;
 
 export default {
-  components: { MenuItem, MainMenu, Header, Footer },
+  layout: 'Frontpage',
+  components: { MenuItem },
   asyncData() {
     return sanity.fetch(query).then(sketches => {
       return {
@@ -47,30 +34,9 @@ export default {
 };
 </script>
 
-<style>
-.headimg {
-  width: 100%;
-  height: 800px;
-  background-image: url('~/assets/headimg_small.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-.logo {
-  width: 100%;
-}
-.container {
-  background-color: white;
-  color: #111;
-}
-
-.main-content {
-  padding: 50px;
-  padding-left: 100px;
-}
-
+<style scoped>
 .menu-container {
-  display:inline-block;
+  display: inline-block;
   width: calc(100% - 130px);
   max-width: 1200px;
   columns: 200px 5;
