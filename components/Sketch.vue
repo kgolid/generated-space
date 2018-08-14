@@ -11,7 +11,7 @@ export default {
 
   head() {
     return {
-      script: [{ src: 'https://rawgit.com/kgolid/p5ycho/master/' + this.path, type: 'module' }],
+      script: [{ src: 'https://rawgit.com/kgolid/p5ycho/master/' + this.path}],
       style: [{ cssText: 'body { background-color:' + this.background + ' !important;}', type: 'text/css' }]
     };
   }
