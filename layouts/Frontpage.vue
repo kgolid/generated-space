@@ -38,4 +38,13 @@ export default {
   padding: 50px;
   padding-left: 100px;
 }
+
+@media (max-width: 500px) {
+  .headimg {
+    height: 550px;
+  }
+  .main-content {
+    padding: 25px;
+  }
+}
 </style>

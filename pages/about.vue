@@ -24,7 +24,7 @@ export default {
   max-width: 700px;
   columns: 250px 2;
   vertical-align: top;
-  padding: 25px;
+  padding: 25px 0 25px 50px;
   padding-left: 50px;
   border-left: 1px solid #111;
   margin-left: 50px;
@@ -34,7 +34,11 @@ export default {
   font-weight: 700;
 }
 
-img {
-  width: 280px;
+@media (max-width: 500px) {
+  .menu-container {
+    margin-left: 0;
+    padding-left: 25px;
+    border-left: none;
+  }
 }
 </style>

@@ -41,9 +41,16 @@ export default {
   max-width: 1200px;
   columns: 200px 5;
   vertical-align: top;
-  padding: 25px;
-  padding-left: 50px;
+  padding: 25px 0 25px 50px;
   border-left: 1px solid #111;
   margin-left: 50px;
+}
+
+@media (max-width: 500px) {
+  .menu-container {
+    margin-left: 0;
+    padding-left: 25px;
+    border-left: none;
+  }
 }
 </style>

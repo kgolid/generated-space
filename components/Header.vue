@@ -36,4 +36,10 @@
 .logo img {
   width: 100%;
 }
+
+@media (max-width: 500px) {
+  .header-container {
+    left: 25px;
+  }
+}
 </style>
