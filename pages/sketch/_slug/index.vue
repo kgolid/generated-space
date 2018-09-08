@@ -4,7 +4,7 @@
       :slug="$route.params.slug"
       :title="sketch.title"
       :date="sketch.created"
-      :path="sketch.path"
+      :gh_link="sketch.github_link"
       :description="sketch.description"
     />
     <Sketch 
@@ -30,6 +30,7 @@ export default {
         _id,title,
         created,
         description,
+        github_link,
         path,
         external,
         modular_script,

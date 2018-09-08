@@ -2,7 +2,7 @@
   <section class="info-container">
     <div class="info-links">
       <a href='/'>&lt; generated.space</a>
-      <a style="float:right" :href="'https://www.github.com/kgolid/p5ycho/blob/master/' + path">github &gt;</a>
+      <a v-if="gh_link" style="float:right" :href="gh_link">github &gt;</a>
     </div>
     <div><p class="info-label">Name</p><h2 class="info-text">{{ title }}</h2></div>
     <div><p class="info-label">Date</p><p class="info-text">{{ date }}</p></div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  props: ['title', 'slug', 'date', 'path', 'description']
+  props: ['title', 'slug', 'date', 'gh_link', 'description']
 };
 </script>
 
