@@ -25,7 +25,7 @@ export default {
 <style>
 .headimg {
   width: 100%;
-  height: 675px;
+  height: 650px;
   background-image: url('~/assets/headimg_small.jpg');
   background-position: center;
   background-size: cover;
