@@ -1,11 +1,25 @@
 <template>
   <div class="main-menu">
-    <nuxt-link to="/" exact><p class="link">Sketches</p></nuxt-link>
-    <nuxt-link to="/about"><p class="link">About</p></nuxt-link>
+    <nuxt-link to="/" exact>
+      <p class="link">Sketches</p>
+    </nuxt-link>
+    <nuxt-link to="/about">
+      <p class="link">About</p>
+    </nuxt-link>
     <div style="height:20px"></div>
-    <a href="https://www.github.com/kgolid"><p class="link">GitHub</p></a>
-    <a href="https://www.twitter.com/kgolid"><p class="link">Twitter</p></a>
-    <a href="https://www.instagram.com/kgolid"><p class="link">Instagram</p></a>
+    <a href="https://shop.generated.space">
+      <p class="link">Shop</p>
+    </a>
+    <div style="height:20px"></div>
+    <a href="https://www.github.com/kgolid">
+      <p class="link">GitHub</p>
+    </a>
+    <a href="https://www.twitter.com/kgolid">
+      <p class="link">Twitter</p>
+    </a>
+    <a href="https://www.instagram.com/kgolid">
+      <p class="link">Instagram</p>
+    </a>
     <div style="height:150px"></div>
   </div>
 </template>
