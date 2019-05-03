@@ -5,8 +5,8 @@ module.exports = {
   mode: 'universal',
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: pkg.name,
     script: [
@@ -25,39 +25,42 @@ module.exports = {
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#FFFFFF' },
 
   /*
-  ** Global CSS
-  */
+   ** Global CSS
+   */
   css: ['@/static/global.css'],
 
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [],
 
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     [
       '@nuxtjs/google-analytics',
       {
-        id: 'UA-47794848-2'
+        id: 'UA-47794848-2',
+        autoTracking: {
+          pageviewOnLoad: false
+        }
       }
     ]
   ],
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {}
   },
 
