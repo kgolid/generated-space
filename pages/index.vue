@@ -38,16 +38,17 @@ export default {
 .menu-container {
   display: inline-block;
   width: calc(100% - 130px);
-  max-width: 1200px;
-  columns: 200px 5;
+  max-width: 1000px;
+  columns: 200px 4;
   vertical-align: top;
+  margin-left: 50px;
   padding: 25px 0 25px 50px;
   border-left: 1px solid #111;
-  margin-left: 50px;
 }
 
 @media (max-width: 500px) {
   .menu-container {
+    width: calc(100% - 80px);
     margin-left: 0;
     padding-left: 25px;
     border-left: none;

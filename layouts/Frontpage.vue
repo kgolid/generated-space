@@ -25,8 +25,8 @@ export default {
 <style>
 .headimg {
   width: 100%;
-  height: 650px;
-  background-image: url("~/assets/headimg_small.jpg");
+  height: 750px;
+  background-image: url('~/assets/headimg_small.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -41,7 +41,7 @@ export default {
 
 @media (max-width: 500px) {
   .headimg {
-    height: 550px;
+    height: 500px;
   }
   .main-content {
     padding: 25px;
