@@ -1,12 +1,23 @@
 <template>
   <section class="info-container">
     <div class="info-links">
-      <a href='/'>&lt; generated.space</a>
+      <a href="/">&lt; generated.space</a>
       <a v-if="gh_link" style="float:right" :href="gh_link">github &gt;</a>
     </div>
-    <div><p class="info-label">Name</p><h2 class="info-text">{{ title }}</h2></div>
-    <div><p class="info-label">Date</p><p class="info-text">{{ date }}</p></div>
-    <div><p class="info-label">Descr</p><p class="info-text">{{ description }}</p></div>
+    <div class="info-body">
+      <div>
+        <p class="info-label">Name</p>
+        <h2 class="info-text">{{ title }}</h2>
+      </div>
+      <div>
+        <p class="info-label">Date</p>
+        <p class="info-text">{{ date }}</p>
+      </div>
+      <div>
+        <p class="info-label">Descr</p>
+        <p class="info-text">{{ description }}</p>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -22,17 +33,29 @@ export default {
   position: fixed;
   top: 0;
   margin: 15px;
-  padding: 20px;
+  padding: 15px;
   background-color: #111;
   font-size: 0.8rem;
 }
 
-.info-container > div {
-  margin-top: 10px;
+.info-body {
+  padding: 10px;
+  padding-top: 20px;
 }
 
-.info-container .info-links {
-  margin: -10px -10px 20px -10px;
+@media (max-width: 500px) {
+  .info-container {
+    min-width: 250px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .info-body {
+    display: none;
+  }
+}
+
+.info-body > div {
+  margin-top: 10px;
 }
 
 .info-links a:hover {
