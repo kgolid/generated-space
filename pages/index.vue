@@ -14,7 +14,7 @@ import MenuItem from '@/components/MenuItem';
 import sanity from '@/static/sanity.js';
 
 const query = `*[_type == "sketch"] | order(created desc) {
-    _id,title,slug,created,description
+    _id,title,slug,created,description,hidden
   }`;
 
 export default {
@@ -23,11 +23,13 @@ export default {
   asyncData() {
     return sanity.fetch(query).then(sketches => {
       return {
-        sketches: sketches.map(s => {
-          let array = s.created.split('-');
-          s.dateFormatted = array[1] + array[2];
-          return s;
-        })
+        sketches: sketches
+          .map(s => {
+            let array = s.created.split('-');
+            s.dateFormatted = array[1] + array[2];
+            return s;
+          })
+          .filter(s => !s.hidden)
       };
     });
   }
