@@ -1,21 +1,21 @@
 <template>
   <div>
     <div class="headimg"></div>
-    <Header/>
+    <Header />
     <section class="container">
       <div class="main-content">
-        <MainMenu/>
-        <nuxt/>
+        <MainMenu />
+        <nuxt />
       </div>
     </section>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header";
-import MainMenu from "@/components/MainMenu";
-import Footer from "@/components/Footer";
+import Header from '@/components/Header';
+import MainMenu from '@/components/MainMenu';
+import Footer from '@/components/Footer';
 
 export default {
   components: { Header, MainMenu, Footer }

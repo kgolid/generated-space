@@ -1,13 +1,14 @@
 <template>
-<div class="menu-container">
-  <MenuItem 
-    v-for="s in sketches"
-    :key="s.id"
-    :title="s.title" 
-    :slug="s.slug.current"
-    :description="s.description"
-    :date="s.dateFormatted" />
-</div>
+  <div class="menu-container">
+    <MenuItem
+      v-for="s in sketches"
+      :key="s.id"
+      :title="s.title"
+      :slug="s.slug.current"
+      :description="s.description"
+      :date="s.dateFormatted"
+    />
+  </div>
 </template>
 <script>
 import MenuItem from '@/components/MenuItem';
