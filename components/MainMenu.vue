@@ -20,7 +20,7 @@
     <a href="https://www.instagram.com/kgolid">
       <p class="link">Instagram</p>
     </a>
-    <a href="https://medium.com/@kjetil.golid">
+    <a href="https://kjetil-golid.medium.com">
       <p class="link">Medium</p>
     </a>
     <div style="height: 150px"></div>
