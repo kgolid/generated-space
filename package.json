@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
     "@sanity/client": "^0.132.2",
-    "ajv": "^6.5.3",
+    "ajv": "^6.12.3",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
